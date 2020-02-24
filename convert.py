@@ -36,9 +36,9 @@ with open("DXYArea.csv",encoding='utf-8') as f:
 	calc_days=["24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39","40","41","42","43","44","45","46","47","48","49","50","51","52"]
 	regions=list(data_c.keys())
 	for i in regions:
-		if not ("24" in tmp[i]):
-			tmp[i]["24"]=0
-			data_c[i].append({"number":0,"yday":24})
+		if not (calc_days[0] in tmp[i]):
+			tmp[i][calc_days[0]]=0
+			data_c[i].append({"number":0,"yday":int(calc_days[0])})
 		for j in range(1,len(calc_days)):
 			if calc_days[j] in tmp[i]:
 				continue
